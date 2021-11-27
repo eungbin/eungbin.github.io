@@ -13,8 +13,8 @@ module.exports = {
   author: {
     name: `김응빈`,
     bio: {
-      role: `취준생`,
-      description: ['사람에 가치를 두는', '능동적으로 일하는', '이로운 것을 만드는'],
+      role: `개발자`,
+      description: ['사람에 가치를 두는', '능동적으로 일하는', '즐기며 개발하는'],
       thumbnail: 'sample.png', // Path to the image in the 'asset' folder
     },
     social: {
@@ -72,15 +72,15 @@ module.exports = {
       // ========================================================
       // ========================================================
       {
-        title: '개발 블로그 테마 개발',
+        title: '주가 예측 및 매수/매도 추천 사이트 개발',
         description:
-          '개발 블로그를 운영하는 기간이 조금씩 늘어나고 점점 많은 생각과 경험이 블로그에 쌓아가면서 제 이야기를 담고 있는 블로그를 직접 만들어보고 싶게 되었습니다. 그동안 여러 개발 블로그를 보면서 좋았던 부분과 불편했던 부분들을 바탕으로 레퍼런스를 참고하여 직접 블로그 테마를 만들게 되었습니다.',
-        techStack: ['gatsby', 'react'],
-        thumbnailUrl: 'blog.png',
+          '머신러닝과 주식에 관심이 조금 생겼을 때, 미래의 주가를 예측하고 더 나아가 해당 종목의 뉴스기사를 분석하여 매수 혹은 매도를 추천해주는 시스템을 만들어보고자 개발하였습니다.',
+        techStack: ['react', 'python', 'keras', 'LSTM'],
+        thumbnailUrl: 'stock.png',
         links: {
-          post: '/gatsby-starter-zoomkoding-introduction',
-          github: 'https://github.com/zoomkoding/zoomkoding-gatsby-blog',
-          demo: 'https://www.zoomkoding.com',
+          post: '',
+          github: 'https://github.com/eungbin/Stock-Prediction',
+          demo: '',
         },
       },
     ],
