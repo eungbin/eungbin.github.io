@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-category-template-js",
+    "path": "/posts/tech-interview",
+    "result": {"pageContext":{"currentCategory":"tech-interview","categories":["All","tech-interview","블로그","featured"],"edges":[{"node":{"id":"390065ef-8ddf-50a2-9b85-4459858b19a2","excerpt":"","fields":{"slug":"/javscript-hoisting/"},"frontmatter":{"categories":"tech-interview","title":"Javascript Hoisting(호이스팅)","date":"November 27, 2021"}},"next":{"fields":{"slug":"/gatsby-github-blog/"}},"previous":null}]}},
+    "staticQueryHashes": ["1073350324","1956554647","2938748437"]}
