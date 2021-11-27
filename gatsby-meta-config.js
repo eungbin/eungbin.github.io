@@ -79,7 +79,7 @@ module.exports = {
         thumbnailUrl: 'stock.png',
         links: {
           post: '',
-          github: 'https://github.com/eungbin/Stock-Prediction',
+          github: 'https://github.com/eungbin/Stock_Prediction',
           demo: '',
         },
       },
