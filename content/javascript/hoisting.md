@@ -3,8 +3,8 @@ emoji: 🔍
 title: Javascript Hoisting(호이스팅)
 date: '2021-11-27 16:10:00'
 author: 펀코딩
-tags: tech-interview
-categories: tech-interview
+tags: tech-interview javascript hoisting
+categories: tech-interview javascript
 ---
 
 ## Javscript Hoisting(호이스팅) 이란?
@@ -68,3 +68,5 @@ foo2 = function() {
 ## Hoisting 적용 우선순위
 
 변수 선언문이 함수 선언문보다 위로 끌어올려진다.
+
+<br /><br /><br />

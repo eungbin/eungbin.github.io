@@ -3,8 +3,8 @@ emoji: 🔍
 title: Javascript Closure(클로저)
 date: '2021-11-29 20:00:00'
 author: 펀코딩
-tags: tech-interview
-categories: tech-interview
+tags: tech-interview javascript closure
+categories: tech-interview javascript
 ---
 
 ## Javscript Closure(클로저)란?
@@ -36,3 +36,5 @@ categories: tech-interview
 
 2. 새로운 Scope를 생성하여 내부 함수에 링크시키기에, function 자체의 스코프가 종료되기까지 내부함수가 메모리에 남아있어 퍼포먼스 손해 감수  
 -> 내부 함수에 링크시키기 때문에, function 자체의 스코프가 종료되기까지 내부함수가 메모리에 남아있어 퍼포먼스 손해 감수
+
+<br /><br /><br />
