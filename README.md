@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://eungbin.github.io">Blog's url: eungbin.github.io</a>
+  Blog's url:<a href="https://eungbin.github.io">eungbin.github.io</a>
 </h1>
 
 <h1 align="center">
