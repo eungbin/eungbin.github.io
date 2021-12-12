@@ -235,9 +235,13 @@ module.exports = {
 ```javascript
   devServer: {
     port: 5500,
-    overlay: true,
     hot: true,
-    writeToDisk: true,
+    devMiddleware: {
+      writeToDisk: true,
+    },
+    client: {
+      overlay: true,
+    },
   },
 ```
 
@@ -282,15 +286,15 @@ module.exports = {
 html-webpack=plugin의 `template`은 번들링 파일을 주입하고 번들링 폴더로 복사할 대상 HTML 파일을 명시하는 옵션  
 
 ```javascript
-const htmlWebpackPlugin = require('html-webpack-plugin');
-const cleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 ...
 
   plugins: [
-    new cleanWebpackPlugin(),
-    new htmlWebpackPlugin({
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
     new MiniCssExtractPlugin({ filename: 'app.css' }),
@@ -341,7 +345,6 @@ export default App;
   width: 500px;
   height: 200px;
   margin: 0 auto;
-  background-image: url(../public/bg.jpg) center no-repeat;
   background-size: cover;
 }
 ```
@@ -353,7 +356,7 @@ export default App;
 ```javascript
 import React from 'react';
 import ReactDom from 'react-dom';
-import App from './src/App';
+import App from './App';
 
 ReactDom.render(<App />, document.getElementById('root'));
 ```
