@@ -182,7 +182,8 @@ npm install html-webpack-plugin clean-webpack-plugin -D
 ```javascript
 module.exports = {
   mode: 'development',
-  entry: './src/index.js'  resolve: {
+  entry: './src/index.js',
+  resolve: {
     extensions: ['.js', '.jsx'],
   },
 };
