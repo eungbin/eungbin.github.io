@@ -289,8 +289,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 ...
 
   plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
+    new cleanWebpackPlugin(),
+    new htmlWebpackPlugin({
       template: './public/index.html',
     }),
     new MiniCssExtractPlugin({ filename: 'app.css' }),
