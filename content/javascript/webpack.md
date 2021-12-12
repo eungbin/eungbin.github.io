@@ -161,7 +161,7 @@ npm install babel-loader style-loader css-loader file-loader -D
 웹팩 번들링 후 적용할 플러그인을 설치  
 
 ```bash
-npm install html-webpack-plugin clean-webpack-plugin -D
+npm install html-webpack-plugin clean-webpack-plugin mini-css-extract-plugin -D
 ```
 
 <ul>
