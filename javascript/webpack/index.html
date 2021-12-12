@@ -201,9 +201,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <code class="language-text">writeToDisk</code> :  메모리 뿐만 아니라 파일도 만들것인지 설정</p>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript">  devServer<span class="token operator">:</span> <span class="token punctuation">{</span>
     port<span class="token operator">:</span> <span class="token number">5500</span><span class="token punctuation">,</span>
-    overlay<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     hot<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-    writeToDisk<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    devMiddleware<span class="token operator">:</span> <span class="token punctuation">{</span>
+      writeToDisk<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    client<span class="token operator">:</span> <span class="token punctuation">{</span>
+      overlay<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre></div>
 <ul>
     <li>modules, rules : 모듈에 적용할 로더들과 그 옵션들을 설정</li>
@@ -238,15 +242,15 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </ul>
 <p>설치했던 플러그인을 불러와 설정해준다.<br>
 html-webpack=plugin의 <code class="language-text">template</code>은 번들링 파일을 주입하고 번들링 폴더로 복사할 대상 HTML 파일을 명시하는 옵션</p>
-<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> htmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> cleanWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">const</span> HtmlWebpackPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> CleanWebpackPlugin <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'clean-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> MiniCssExtractPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mini-css-extract-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token operator">...</span>
 
   plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token keyword">new</span> <span class="token class-name">cleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-    <span class="token keyword">new</span> <span class="token class-name">htmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token keyword">new</span> <span class="token class-name">CleanWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token keyword">new</span> <span class="token class-name">HtmlWebpackPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
       template<span class="token operator">:</span> <span class="token string">'./public/index.html'</span><span class="token punctuation">,</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     <span class="token keyword">new</span> <span class="token class-name">MiniCssExtractPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span> filename<span class="token operator">:</span> <span class="token string">'app.css'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
@@ -280,7 +284,6 @@ html-webpack=plugin의 <code class="language-text">template</code>은 번들링 
   width<span class="token operator">:</span> <span class="token number">500</span>px<span class="token punctuation">;</span>
   height<span class="token operator">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
   margin<span class="token operator">:</span> <span class="token number">0</span> auto<span class="token punctuation">;</span>
-  background<span class="token operator">-</span>image<span class="token operator">:</span> <span class="token function">url</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token operator">/</span><span class="token keyword">public</span><span class="token operator">/</span>bg<span class="token punctuation">.</span>jpg<span class="token punctuation">)</span> center no<span class="token operator">-</span>repeat<span class="token punctuation">;</span>
   background<span class="token operator">-</span>size<span class="token operator">:</span> cover<span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre></div>
 <ul>
@@ -288,7 +291,7 @@ html-webpack=plugin의 <code class="language-text">template</code>은 번들링 
 </ul>
 <div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span><span class="token punctuation">;</span>
 <span class="token keyword">import</span> ReactDom <span class="token keyword">from</span> <span class="token string">'react-dom'</span><span class="token punctuation">;</span>
-<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./src/App'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./App'</span><span class="token punctuation">;</span>
 
 ReactDom<span class="token punctuation">.</span><span class="token function">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span>App <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'root'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></div>
 <h2 id="실행" style="position:relative;"><a href="#%EC%8B%A4%ED%96%89" aria-label="실행 permalink" class="anchor before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>실행</h2>
