@@ -234,7 +234,6 @@ module.exports = {
 
 ```javascript
   devServer: {
-    port: 5500,
     hot: true,
     devMiddleware: {
       writeToDisk: true,
