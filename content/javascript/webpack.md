@@ -241,6 +241,7 @@ module.exports = {
     client: {
       overlay: true,
     },
+    port: 5000
   },
 ```
 
@@ -368,6 +369,137 @@ package.json에 등록한 scripts 명령어로 실행
 npm run dev
 ```
 
+<br /><hr /><br />
+
+## Typescript 설정하기 (21.12.16 추가)
+
+### 파일명 변경하기
+
+`index.js`와 `App.js`의 확장자를 `.tsx`로 변경
+
+### 필요 패키지 설치 
+
+```bash
+npm i -D typescript @babel/preset-typescript ts-loader fork-ts-checker-webpack-plugin
+```
+
+### Webpack 설정 변경하기
+
+```javascript
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin'); // 추가
+
+entry: './src/index.tsx',       // modify jsx->tsx
+resolve: {
+  extensions: ['.ts', '.tsx', ".js", ".jsx"],  // add ts, tsx
+},
+
+module: {
+  rules: [
+    test: /\.(ts|tsx)$/,  // modify js->jsx
+    use: [
+      'babel-loader',
+      {
+        loader: 'ts-loader',
+        options: {
+          transpileOnly: true,
+        },
+      },
+    ],
+    // loader: 'babel-loader',
+  ]
+}
+
+plugins: [
+  new ForkTsCheckerWebpackPlugin(),  // add
+],
+```
+
+### babel.config.js 변경
+
+```javascript
+module.exports = {
+    presets: ['@babel/preset-react', '@babel/preset-env', '@babel/typescript'], // add: babel/typescript
+};
+```
+
+### package.json 변경
+
+```json
+{
+  "main": "index.tsx",
+}
+```
+
+### tsconfig.json 파일 작성
+
+```json
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noResolve": false,
+    "noImplicitAny": false,
+    "removeComments": false,
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
+    "keyofStringsOnly": true,
+  },
+  "typeRoots": ["node_modules/@types", "src/@type"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts",
+    "acceptance-tests",
+    "webpack",
+    "jest",
+    "src/setupTests.ts",
+    "./node_modules/**/*"
+  ],
+  "include": ["./src/**/*", "@type"]
+}
+```
+
+### App.tsx code
+
+```typescript
+import React from 'react';
+import './App.css';
+
+interface Props {}
+
+const App = ({  }: Props) => {
+  return (
+    <div className="container">
+      <h1>Hello, World!</h1>
+    </div>
+  );
+};
+
+export default App;
+```
+
+### index.tsx code
+
+```typescript
+import React from 'react';
+// import ReactDom from 'react-dom';
+import * as ReactDOM from "react-dom";
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+## 실행
+
+package.json에 등록한 scripts 명령어로 실행  
+
+```bash
+npm run dev
+```
+
 <br /><br /><br />
 
 Refference <br />
@@ -376,4 +508,7 @@ Webpack(웹팩) 이란?
 </a><br />
 <a href="https://velog.io/@ksh4820/CRA-%EC%97%86%EC%9D%B4-React-%EA%B0%9C%EB%B0%9C-%ED%99%98%EA%B2%BD-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0">
 Webpack 설정하기
+</a>
+<a href="https://velog.io/@do_dadu/Webpack%EC%9C%BC%EB%A1%9C-%EB%A7%8C%EB%93%A0-React-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90-Typescript-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0CRA">
+React+Webpack Typescript 설정
 </a>
