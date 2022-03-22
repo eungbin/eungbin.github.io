@@ -242,7 +242,8 @@ module.exports = {
       overlay: true,
     },
     port: 5500,
-    host: "localhost"
+    host: "localhost",
+    historyApiFallback: true
   },
 ```
 
