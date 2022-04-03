@@ -448,6 +448,7 @@ module.exports = {
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "keyofStringsOnly": true,
+    "resolveJsonModule": true,  // json 파일 불러올 때 필요
   },
   "typeRoots": ["node_modules/@types", "src/@type"],
   "exclude": [
