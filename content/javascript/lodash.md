@@ -2,7 +2,7 @@
 emoji: 🔍
 title: 컴포넌트 성능 향상(Javascript Lodash)
 date: '2022-05-14 16:00:00'
-author: 펀코딩
+author: Covy
 tags: tech-interview react javascript Lodash
 categories: tech-interview javascript react
 ---

@@ -2,7 +2,7 @@
 emoji: 🔍
 title: React Hook
 date: '2021-12-15 17:00:00'
-author: 펀코딩
+author: Covy
 tags: tech-interview react
 categories: tech-interview react
 ---

@@ -2,7 +2,7 @@
 emoji: 🔍
 title: Web 브라우저의 동작 순서
 date: '2022-05-03 18:00:00'
-author: 펀코딩
+author: Covy
 tags: tech-interview web browser
 categories: tech-interview web
 ---

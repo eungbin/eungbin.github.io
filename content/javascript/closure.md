@@ -2,7 +2,7 @@
 emoji: 🔍
 title: Javascript Closure(클로저)
 date: '2021-11-29 20:00:00'
-author: 펀코딩
+author: Covy
 tags: tech-interview javascript closure
 categories: tech-interview javascript
 ---

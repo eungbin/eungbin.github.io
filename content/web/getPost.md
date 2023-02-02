@@ -2,7 +2,7 @@
 emoji: 🔍
 title: GET과 POST
 date: '2021-12-10 19:00:00'
-author: 펀코딩
+author: Covy
 tags: tech-interview web get post httpmethod
 categories: tech-interview web
 ---
