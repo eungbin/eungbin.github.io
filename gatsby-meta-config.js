@@ -1,5 +1,5 @@
 module.exports = {
-  title: `funCoding.com`,
+  title: `Covy.com`,
   description: `description`,
   language: `ko`, // `ko`, `en` => currently support versions for Korean and English
   siteUrl: `https://eungbin.github.io`,

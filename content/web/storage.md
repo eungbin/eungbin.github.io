@@ -2,7 +2,7 @@
 emoji: 🔍
 title: LocalStorage, SessionStorage, Cookie
 date: '2021-12-22 18:00:00'
-author: 펀코딩
+author: Covy
 tags: tech-interview web localstorage sessionstorage cookie
 categories: tech-interview web
 ---
