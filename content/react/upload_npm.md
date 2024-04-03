@@ -1,6 +1,6 @@
 ---
 emoji: 🔍
-title: React Update Array State
+title: NPM 배포하기
 date: '2024-04-03 16:30:00'
 author: Covy
 tags: tech-interview react
